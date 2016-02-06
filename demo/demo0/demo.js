@@ -2,13 +2,13 @@
  *@author: nada
  *
  *--------大概一个react组件包括：模板HTML,交互JS，样式CSS.而在这里，HTML与JS使用JSX结合在一起了。
- *--------第一次渲染真实DOM时使用getInitialState() 返回的数据,用this,state访问
+ *--------第一次渲染真实DOM时使用getInitialState() 返回的数据,用this.state访问
  *--------第二次更新真实DOM时使用setState() 设置的数据
  *--------绑定事件时，我们可以使用ref=“name”属性对一个DOM节点进行标记，同时可以通过React.findDOMNode(this.refs.name)获取到这个节点的原生DOM
  *--------一个组件就包含了 JSX 模板、数据维护、事件绑定的话，代码量已经够多了，这时候可以采用 AMD/CMD 的方式，将组件进行更细粒度的划分，可以以文件即组件的方式来编写
  *--------在 React 中，数据流是单向的，且组件之间可以嵌套，我们可以通过对最顶层组件传递属性方式，向下层组件传送数据
  *-------------嵌套组件间，使用 this.props 属性向下传递数据
- *-------------独立组件之间，自行维护数据则需要自行维护一个全局数据存储，或者使用发布订阅地方式通知数据的更新
+ *-------------独立组件之间，自行维护数据则需要自行维护一个全局数据存储，或者使用发布订阅地方式通知数据的更新     所以涉及到数据的管理方式
  */
  var DemoComponent = React.createClass({
  	//初始化数据
@@ -136,7 +136,7 @@
  				</div>
  			</div>
  			)
- 	},
+ 	}
  });
 var LiWrapper = React.createClass({
 	render: function() {
@@ -150,7 +150,7 @@ var LiWrapper = React.createClass({
  				</li>
 			)
 	}
-})
+});
 var movies = [
  				{
  					id: 1,
