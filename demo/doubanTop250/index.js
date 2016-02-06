@@ -69,7 +69,7 @@ var MovieItemComponent = React.createClass({
 var LoadingHintComponent = React.createClass({
     render: function() {
         return (
-            <div className = "loading" ref="load">加载中...</div>
+            <div className = "loading" >加载中...</div>
         )
     }
 });
@@ -140,12 +140,12 @@ var DoubanTopComponent = React.createClass({
 
         }.bind(this)); //这里重新修正了上下文
 
-        //if (this.state.page > this.state.pageCount) {
-        //    $(React.findDOMNode(this.refs.load)).hide();
-        //    $(window).off('scroll');
-        //} else {
-        //    $(React.findDOMNode(this.refs.load)).show();
-        //}
+        if (this.state.page > this.state.pageCount) {
+            $(React.findDOMNode(this.refs.load)).hide();
+            $(window).off('scroll');
+        } else {
+            $(React.findDOMNode(this.refs.load)).show();
+        }
         return (
             <div className = "doubanTop">
                 <HeaderComponent />
@@ -154,15 +154,10 @@ var DoubanTopComponent = React.createClass({
                     <span className="dropdowm" ></span>
                 </div>
                 {movies}
-                <LoadingHintComponent />
+                <LoadingHintComponent ref="load"/>
             </div>
         )
-        if (this.state.page > this.state.pageCount) {
-            React.findDOMNode(this.refs.load).style.dispaly = "none";
-            $(window).off('scroll');
-        } else {
-            React.findDOMNode(this.refs.load).style.display = "block";
-        }
+        
     }
 });
 
