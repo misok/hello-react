@@ -169,7 +169,7 @@ var DoubanTopComponent = React.createClass({
 var StarsComponent = React.createClass({
    render: function() {
        var score = 5;
-       if(parseInt(this.props.score) <= 9) {
+       if(parseInt(this.props.score) < 9) {
            score = 4;
        }
        if(score === 5) {
