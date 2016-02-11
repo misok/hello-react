@@ -27,8 +27,8 @@ react基本知识点都写在注释中
 5.没做过滤筛选
 ```
 
-- 位置：hello-react/demo/demo0
-- 在浏览器打开 http://localhost:63342/react/hello-react/demo/demo0/index.html 
+- 位置：hello-react/demo/doubanTop250
+- 在浏览器打开 http://localhost:63342/react/hello-react/demo/doubanTop250/index.html
 - 页面长这样
 ![img2](./img2.png)
 
